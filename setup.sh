@@ -590,31 +590,31 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   # The initial setup script to prep the environment on macOS
   # xformers has been omitted as that is for Nvidia GPUs only
 
-  if ! command -v brew >/dev/null; then
-    echo "Please install homebrew first. This is a requirement for the remaining setup."
-    echo "You can find that here: https://brew.sh"
-    #shellcheck disable=SC2016
-    echo 'The "brew" command should be in $PATH to be detected.'
-    exit 1
-  fi
-
-  check_storage_space
-
-  # Install base python packages
-  echo "Installing Python 3.10 if not found."
-  if ! brew ls --versions python@3.10 >/dev/null; then
-    echo "Installing Python 3.10."
-    brew install python@3.10 >&3
-  else
-    echo "Python 3.10 found!"
-  fi
-  echo "Installing Python-TK 3.10 if not found."
-  if ! brew ls --versions python-tk@3.10 >/dev/null; then
-    echo "Installing Python TK 3.10."
-    brew install python-tk@3.10 >&3
-  else
-    echo "Python Tkinter 3.10 found!"
-  fi
+#  if ! command -v brew >/dev/null; then
+#    echo "Please install homebrew first. This is a requirement for the remaining setup."
+#    echo "You can find that here: https://brew.sh"
+#    #shellcheck disable=SC2016
+#    echo 'The "brew" command should be in $PATH to be detected.'
+#    exit 1
+#  fi
+#
+#  check_storage_space
+#
+#  # Install base python packages
+#  echo "Installing Python 3.10 if not found."
+#  if ! brew ls --versions python@3.10 >/dev/null; then
+#    echo "Installing Python 3.10."
+#    brew install python@3.10 >&3
+#  else
+#    echo "Python 3.10 found!"
+#  fi
+#  echo "Installing Python-TK 3.10 if not found."
+#  if ! brew ls --versions python-tk@3.10 >/dev/null; then
+#    echo "Installing Python TK 3.10."
+#    brew install python-tk@3.10 >&3
+#  else
+#    echo "Python Tkinter 3.10 found!"
+#  fi
 
   update_kohya_ss
 
